@@ -56,7 +56,9 @@
           </tr>
           <tr>
             <td id="city">[localization]</td>
-            <td><a href="/weather/settings"><img src="https://cdn-icons-png.flaticon.com/512/3019/3019014.png" style="width:42px;height:42px;"></a></td>
+          </tr>
+          <tr>
+            <td id="updateTime">[updateTime]</td>
           </tr>
         </table>
       </div>
@@ -64,16 +66,7 @@
 
     <div id="clock" class="clock"></div>
 
-
-    <div id="testForm">
-      <form action="/weather/updateSettings" method="post">
-        <label for="key">API key:</label><br>
-        <input type="text" name="key"><br>
-        <label for="city">Miasto (bez PL znaków):</label><br>
-        <input type="text" name="city" value="Doe"><br><br>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
+    <a href="/settings">USTAWIENIA</a>
 
     <script>
 
@@ -88,6 +81,7 @@
         document.getElementById("city").innerHTML = httpGet("/weather/getCity");
         document.getElementById("weatherCondition").innerHTML = httpGet("/weather/getCondition");
         document.getElementById("weatherConditionIcon").innerHTML = "<img src=\"" + httpGet("/weather/getConditionIcon") + "\">";
+        document.getElementById("updateTime").innerHTML = httpGet("/weather/getUpdateTime");
       }
 
 
