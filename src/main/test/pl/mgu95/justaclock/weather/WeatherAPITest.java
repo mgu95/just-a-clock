@@ -42,4 +42,9 @@ public class WeatherAPITest {
         boolean result = weatherAPI.updateWeather();
         assertTrue(result);
     }
+
+    @Test
+    void dataIsOnlyFor3daysNot4() {
+        assertTrue(false);
+    }
 }

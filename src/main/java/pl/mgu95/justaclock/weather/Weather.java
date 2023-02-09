@@ -9,7 +9,7 @@ public interface Weather {
     public String getCurrentWeatherConditionIcon();
     public int getTemperatureAtHour(int hour);
     public String getConditionIconAtHour(int hour);
-    public float getAirQualityPM25();
+    public float getAirQualityPM2_5();
     public float getAirQualityPM10();
     public String getWindDirection();
     public int getWindSpeed();

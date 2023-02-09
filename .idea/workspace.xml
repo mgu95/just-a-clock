@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a25215df-ac48-4a74-aac8-05aa2390c70e" name="Changes" comment="Integration with weather">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/SettingsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/settings.jsp" afterDir="false" />
+    <list default="true" id="a25215df-ac48-4a74-aac8-05aa2390c70e" name="Changes" comment="more data from weather">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/WeatherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/Weather.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/weatherSettings.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +36,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariu/OneDrive/Programming/idea/just-a-clock/src/main/webapp&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/mariu/OneDrive/Programming/idea/just-a-clock"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mariu\OneDrive\Programming\idea\just-a-clock" />
       <recent name="C:\Users\mariu\OneDrive\Programming\idea\just-a-clock\src\main\webapp" />
     </key>
   </component>
@@ -115,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675795064754</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="more data from weather">
+      <created>1675893713120</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675893713120</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +133,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Integration with weather" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integration with weather" />
+    <MESSAGE value="more data from weather" />
+    <option name="LAST_COMMIT_MESSAGE" value="more data from weather" />
   </component>
 </project>
