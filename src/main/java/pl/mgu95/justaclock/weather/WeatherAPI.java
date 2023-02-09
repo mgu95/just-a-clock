@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -34,7 +36,7 @@ public class WeatherAPI implements Weather{
     public WeatherAPI() {
     }
 
-    public boolean updateWeather() {
+    private boolean updateWeather() {
 
         if (key == null || city == null) {
             return false;
@@ -140,6 +142,22 @@ public class WeatherAPI implements Weather{
         }
     }
 
+    private boolean validator() {
+        if (city == null || key == null) return false;
+        if (updateTime == null) updateWeather();
+        LocalDate localDate = LocalDate.now();
+        LocalDate updateDate = LocalDate.parse(updateTime.substring(0, 10));
+        if (localDate.isAfter(updateDate)) updateWeather();
+        LocalTime localTime = LocalTime.now();
+        String str = updateTime.substring(11, 16);
+        LocalTime updateTime = LocalTime.parse(str);
+        if (localTime.getHour() - updateTime.getHour() != 0) updateWeather();
+        if (localTime.getMinute() - updateTime.getMinute() > 15) updateWeather();
+
+        return true;
+    }
+
+    @Override
     public void setKey(String key) {
         this.key = key;
     }
@@ -151,71 +169,85 @@ public class WeatherAPI implements Weather{
 
     @Override
     public String getCity() {
+        validator();
         return city;
     }
 
     @Override
     public int getCurrentTemperature() {
+        validator();
         return currentTemperature;
     }
 
     @Override
     public String getCurrentWeatherCondition() {
+        validator();
         return currentWeatherCondition;
     }
 
     @Override
     public String getCurrentWeatherConditionIcon() {
+        validator();
         return currentWeatherConditionIcon;
     }
 
     @Override
     public int getTemperatureAtHour(int hour) {
+        validator();
         return hourlyForecastTemperature[hour];
     }
 
     @Override
     public String getConditionIconAtHour(int hour) {
+        validator();
         return hourlyForecastIcons[hour];
     }
 
     @Override
     public float getAirQualityPM2_5() {
+        validator();
         return airQualityPM2_5;
     }
 
     @Override
     public float getAirQualityPM10() {
+        validator();
         return airQualityPM10;
     }
 
     @Override
     public String getWindDirection() {
+        validator();
         return windDirection;
     }
 
     @Override
     public int getWindSpeed() {
+        validator();
         return windSpeed;
     }
 
     @Override
     public String getSunrise() {
+        validator();
         return sunrise;
     }
 
     @Override
     public String getSunset() {
+        validator();
         return sunset;
     }
 
     @Override
     public int getTemperatureAtDay(int day) {
+        validator();
         return dailyForecastTemperature[day];
     }
 
     @Override
     public String getConditionIconAtDay(int day) {
+        validator();
         return dailyForecastIcons[day];
     }
 

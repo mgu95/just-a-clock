@@ -2,6 +2,7 @@ package pl.mgu95.justaclock.weather;
 
 public interface Weather {
 
+    public void setKey(String key);
     public void setCity(String city);
     public String getCity();
     public int getCurrentTemperature();

@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a25215df-ac48-4a74-aac8-05aa2390c70e" name="Changes" comment="more data from weather">
+    <list default="true" id="a25215df-ac48-4a74-aac8-05aa2390c70e" name="Changes" comment="WeatherAPI class is complete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/services/WeatherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/apps/clock.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/apps/weather.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/WeatherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/Weather.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/settings.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/settings.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,7 @@
       <recent name="C:\Users\mariu\OneDrive\Programming\idea\just-a-clock\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.JustAClockApplication">
     <configuration name="JustAClockApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.mgu95.justaclock.JustAClockApplication" />
       <module name="just-a-clock" />
@@ -86,11 +93,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeatherAPITest.ifCityAndKeyIsNullUpdateWeatherShouldReturnFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="just-a-clock" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.mgu95.justaclock.weather.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.mgu95.justaclock.weather" />
+      <option name="MAIN_CLASS_NAME" value="pl.mgu95.justaclock.weather.WeatherAPITest" />
+      <option name="METHOD_NAME" value="ifCityAndKeyIsNullUpdateWeatherShouldReturnFalse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JustAClockApplication" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.WeatherAPITest" />
-        <item itemvalue="Application.JustAClockApplication" />
+        <item itemvalue="JUnit.WeatherAPITest.ifCityAndKeyIsNullUpdateWeatherShouldReturnFalse" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675893713120</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="WeatherAPI class is complete">
+      <created>1675901392045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675901392045</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +165,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Integration with weather" />
     <MESSAGE value="more data from weather" />
-    <option name="LAST_COMMIT_MESSAGE" value="more data from weather" />
+    <MESSAGE value="WeatherAPI class is complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="WeatherAPI class is complete" />
   </component>
 </project>

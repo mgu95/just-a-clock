@@ -1,9 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
 
-<%@ page import="pl.mgu95.justaclock.weather.ExampleWeather" %>
-<%@ page import="pl.mgu95.justaclock.weather.Weather" %>
-
 <!DOCTYPE html>
 
 <html>

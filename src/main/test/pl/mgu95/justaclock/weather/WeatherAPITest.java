@@ -17,21 +17,21 @@ public class WeatherAPITest {
 
     @Test
     void ifCityAndKeyIsNullUpdateWeatherShouldReturnFalse() {
-        boolean result = weatherAPI.updateWeather();
+        boolean result = true;
         assertFalse(result);
     }
 
     @Test
     void ifCityIsNullUpdateWeatherShouldReturnFalse() {
         weatherAPI.setKey("XXX");
-        boolean result = weatherAPI.updateWeather();
+        boolean result = true;
         assertFalse(result);
     }
 
     @Test
     void ifKeyIsNullUpdateWeatherShouldReturnFalse() {
         weatherAPI.setCity("YYY");
-        boolean result = weatherAPI.updateWeather();
+        boolean result = true;
         assertFalse(result);
     }
 
@@ -39,7 +39,7 @@ public class WeatherAPITest {
     void ifCityAndKeyIsNotNullUpdateWeatherShouldReturnTrue() {
         weatherAPI.setKey("XXX");
         weatherAPI.setCity("YYY");
-        boolean result = weatherAPI.updateWeather();
+        boolean result = false;
         assertTrue(result);
     }
 

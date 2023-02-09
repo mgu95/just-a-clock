@@ -1,15 +1,21 @@
 package pl.mgu95.justaclock.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import pl.mgu95.justaclock.services.WeatherService;
 
 @Controller
-@SessionAttributes({"key", "city"})
 public class SettingsController {
+
+    WeatherService weatherService;
+
+    @Autowired
+    public void setUp(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
 
     @RequestMapping(value = "/settings", method = RequestMethod.GET)
     public String showSettings() {
@@ -17,9 +23,9 @@ public class SettingsController {
     }
 
     @RequestMapping(value = "/settings/weatherInitialization", method = RequestMethod.POST)
-    public String weatherInitialization(ModelMap model, @RequestParam String key, @RequestParam String city) {
-        model.put("key",  key);
-        model.put("city", city);
+    public String weatherInitialization(@RequestParam String key, @RequestParam String city) {
+        weatherService.setKey(key);
+        weatherService.setCity(city);
 
         return "settings";
     }
