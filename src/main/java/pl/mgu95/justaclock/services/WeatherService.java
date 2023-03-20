@@ -2,7 +2,10 @@ package pl.mgu95.justaclock.services;
 
 import org.springframework.stereotype.Service;
 import pl.mgu95.justaclock.weather.Weather;
-import pl.mgu95.justaclock.weather.WeatherAPI;
+import pl.mgu95.justaclock.weather.WeatherAPI.WeatherAPI;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 public class WeatherService {
@@ -21,24 +24,32 @@ public class WeatherService {
         return weather.getCity();
     }
 
-    public int getCurrentTemperature() {
-        return weather.getCurrentTemperature();
+    public int getTemperature(LocalDateTime localDateTime) {
+        return weather.getTemperature(localDateTime);
     }
 
-    public String getCurrentWeatherCondition() {
-        return weather.getCurrentWeatherCondition();
+    public String getWeatherCondition(LocalDateTime localDateTime) {
+        return weather.getWeatherCondition(localDateTime);
     }
 
-    public String getCurrentWeatherConditionIcon() {
-        return weather.getCurrentWeatherConditionIcon();
+    public String getWeatherIcon(LocalDateTime localDateTime) {
+        return weather.getWeatherIcon(localDateTime);
     }
 
-    public int getTemperatureAtHour(int hour) {
-        return weather.getTemperatureAtHour(hour);
+    public String getSunrise(LocalDate localDate) {
+        return weather.getSunrise(localDate);
     }
 
-    public String getConditionIconAtHour(int hour) {
-        return weather.getConditionIconAtHour(hour);
+    public String getSunset(LocalDate localDate) {
+        return weather.getSunset(localDate);
+    }
+
+    public String getWindDirection(LocalDateTime localDateTime) {
+        return weather.getWindDirection(localDateTime);
+    }
+
+    public int getWindSpeed(LocalDateTime localDateTime) {
+        return weather.getWindSpeed(localDateTime);
     }
 
     public float getAirQualityPM2_5() {
@@ -47,30 +58,6 @@ public class WeatherService {
 
     public float getAirQualityPM10() {
         return weather.getAirQualityPM10();
-    }
-
-    public String getWindDirection() {
-        return weather.getWindDirection();
-    }
-
-    public int getWindSpeed() {
-        return weather.getWindSpeed();
-    }
-
-    public String getSunrise() {
-        return weather.getSunrise();
-    }
-
-    public String getSunset() {
-        return weather.getSunset();
-    }
-
-    public int getTemperatureAtDay(int day) {
-        return weather.getTemperatureAtDay(day);
-    }
-
-    public String getConditionIconAtDay(int day) {
-        return weather.getConditionIconAtDay(day);
     }
 
     public String getUpdateTime() {

@@ -1,10 +1,18 @@
 package pl.mgu95.justaclock.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.mgu95.justaclock.services.WeatherService;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @RestController
+@Validated
+@RequestMapping("/weather")
 public class WeatherController {
 
     WeatherService weatherService;
@@ -14,82 +22,63 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @RequestMapping(value = "/weather/getCity", method = RequestMethod.GET)
+    @GetMapping("/getCity")
     public String getCity() {
         return weatherService.getCity();
     }
 
-    @RequestMapping(value = "/weather/getCurrentTemperature", method = RequestMethod.GET)
-    public int getCurrentTemperature() {
-        return weatherService.getCurrentTemperature();
+    @GetMapping("/getTemperature")
+    public int getTemperature(@RequestParam int day, @RequestParam int month, @RequestParam int year,
+                              @RequestParam @Min(0) @Max(23) int hour) {
+        return weatherService.getTemperature(LocalDateTime.of(year, month, day, hour, 0));
     }
 
-    @RequestMapping(value = "/weather/getCurrentWeatherCondition", method = RequestMethod.GET)
-    public String getCurrentWeatherCondition() {
-        return weatherService.getCurrentWeatherCondition();
+    @RequestMapping(value = "/getWeatherCondition/day={day}&month={month}&year={year}&hour={hour}", method = RequestMethod.GET)
+    public String getWeatherCondition(@PathVariable int day, @PathVariable int month, @PathVariable int year, @PathVariable int hour) {
+        return weatherService.getWeatherCondition(LocalDateTime.of(year, month, day, hour, 0));
     }
 
-    @RequestMapping(value = "/weather/getCurrentWeatherConditionIcon", method = RequestMethod.GET)
-    public String getCurrentWeatherConditionIcon() {
-        return weatherService.getCurrentWeatherConditionIcon();
+    @RequestMapping(value = "/getWeatherIcon/day={day}&month={month}&year={year}&hour={hour}", method = RequestMethod.GET)
+    public String getWeatherIcon(@PathVariable int day, @PathVariable int month, @PathVariable int year, @PathVariable int hour) {
+        return weatherService.getWeatherIcon(LocalDateTime.of(year, month, day, hour, 0));
     }
 
-    @RequestMapping(value = "/weather/getTemperatureAtHour/{hour}", method = RequestMethod.GET)
-    public int getTemperatureAtHour(@PathVariable int hour) {
-        return weatherService.getTemperatureAtHour(hour);
+    @RequestMapping(value = "/getSunrise/day={day}&month={month}&year={year}", method = RequestMethod.GET)
+    public String getSunrise(@PathVariable int day, @PathVariable int month, @PathVariable int year) {
+        return weatherService.getSunrise(LocalDate.of(year, month, day));
     }
 
-    @RequestMapping(value = "/weather/getConditionIconAtHour/{hour}", method = RequestMethod.GET)
-    public String getConditionIconAtHour(@PathVariable int hour) {
-        return weatherService.getConditionIconAtHour(hour);
+    @RequestMapping(value = "/getSunset/day={day}&month={month}&year={year}", method = RequestMethod.GET)
+    public String getSunset(@PathVariable int day, @PathVariable int month, @PathVariable int year) {
+        return weatherService.getSunset(LocalDate.of(year, month, day));
     }
 
-    @RequestMapping(value = "/weather/getAirQualityPM2_5", method = RequestMethod.GET)
+    @RequestMapping(value = "/getWindDirection/day={day}&month={month}&year={year}&hour={hour}", method = RequestMethod.GET)
+    public String getWindDirection(@PathVariable int day, @PathVariable int month, @PathVariable int year, @PathVariable int hour) {
+        return weatherService.getWindDirection(LocalDateTime.of(year, month, day, hour, 0));
+    }
+
+    @RequestMapping(value = "/getWindSpeed/day={day}&month={month}&year={year}&hour={hour}", method = RequestMethod.GET)
+    public int getWindSpeed(@PathVariable int day, @PathVariable int month, @PathVariable int year, @PathVariable int hour) {
+        return weatherService.getWindSpeed(LocalDateTime.of(year, month, day, hour, 0));
+    }
+
+    @RequestMapping(value = "/getAirQualityPM2_5", method = RequestMethod.GET)
     public float getAirQualityPM2_5() {
         return weatherService.getAirQualityPM2_5();
     }
 
-    @RequestMapping(value = "/weather/getAirQualityPM10", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAirQualityPM10", method = RequestMethod.GET)
     public float getAirQualityPM10() {
         return weatherService.getAirQualityPM10();
     }
 
-    @RequestMapping(value = "/weather/getWindDirection", method = RequestMethod.GET)
-    public String getWindDirection() {
-        return weatherService.getWindDirection();
-    }
-
-    @RequestMapping(value = "/weather/getWindSpeed", method = RequestMethod.GET)
-    public int getWindSpeed() {
-        return weatherService.getWindSpeed();
-    }
-
-    @RequestMapping(value = "/weather/getSunrise", method = RequestMethod.GET)
-    public String getSunrise() {
-        return weatherService.getSunrise();
-    }
-
-    @RequestMapping(value = "/weather/getSunset", method = RequestMethod.GET)
-    public String getSunset() {
-        return weatherService.getSunset();
-    }
-
-    @RequestMapping(value = "/weather/getTemperatureAtDay/{day}", method = RequestMethod.GET)
-    public int getTemperatureAtDay(int day) {
-        return weatherService.getTemperatureAtDay(day);
-    }
-
-    @RequestMapping(value = "/weather/getConditionIconAtDay/{day}", method = RequestMethod.GET)
-    public String getConditionIconAtDay(int day) {
-        return weatherService.getConditionIconAtDay(day);
-    }
-
-    @RequestMapping(value = "/weather/getUpdateTime", method = RequestMethod.GET)
+    @RequestMapping(value = "/getUpdateTime", method = RequestMethod.GET)
     public String getUpdateTime() {
         return weatherService.getUpdateTime();
     }
 
-    @RequestMapping(value = "/weather/getDataSource", method = RequestMethod.GET)
+    @RequestMapping(value = "/getDataSource", method = RequestMethod.GET)
     public String getDataSource() {
         return weatherService.getDataSource();
     }

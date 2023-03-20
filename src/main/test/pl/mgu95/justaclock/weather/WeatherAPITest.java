@@ -2,6 +2,7 @@ package pl.mgu95.justaclock.weather;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pl.mgu95.justaclock.weather.WeatherAPI.WeatherAPI;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
