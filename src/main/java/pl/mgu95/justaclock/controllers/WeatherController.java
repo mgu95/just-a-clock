@@ -1,5 +1,6 @@
 package pl.mgu95.justaclock.controllers;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,11 @@ public class WeatherController {
     @GetMapping("/getCity")
     public String getCity() {
         return weatherService.getCity();
+    }
+
+    @GetMapping("/getForecast")
+    public String getForecast(@RequestParam @Min(0) @Max(2) int day) {
+        return weatherService.getForecast(day).toString();
     }
 
     @GetMapping("/getTemperature")

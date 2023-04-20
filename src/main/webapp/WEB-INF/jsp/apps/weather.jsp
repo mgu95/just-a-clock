@@ -97,6 +97,14 @@ var myChart = new Chart("myChart", {
   }
 });
 
+function getTemperature() {
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hour = date.getHours();
+  return httpGet("/weather/getTemperature?day=" + day + "&month=" + month + "&year=" + year + "&hour=" + hour);
+}
+
 function refreshHourlyForecastTab(chart) {
   const date = new Date();
   let day = date.getDate();
@@ -105,7 +113,7 @@ function refreshHourlyForecastTab(chart) {
   let hour = date.getHours();
   let hours = [hour, hour + 1, hour + 1, hour + 2, hour + 3, hour + 4, hour + 5];
   chart.data.labels = [hours[0], hours[1], hours[2], hours[3], hours[4], hours[5]];
-  let temps = [httpGet("/weather/getTemperature?day=" + day + "&month=" + month + "&year=" + year + "&hour=" + hours[0]),
+  let temps = [httpGet("/weather/getTemperature?day=" + date.getDate() + "&month=" + month + "&year=" + year + "&hour=" + hours[0]),
     httpGet("/weather/getTemperature?day=" + day + "&month=" + month + "&year=" + year + "&hour=" + hours[1]),
     httpGet("/weather/getTemperature?day=" + day + "&month=" + month + "&year=" + year + "&hour=" + hours[2]),
     httpGet("/weather/getTemperature?day=" + day + "&month=" + month + "&year=" + year + "&hour=" + hours[3]),
@@ -119,29 +127,11 @@ function refreshHourlyForecastTab(chart) {
     if  (temps[i] < minTemp) {minTemp = temps[i];}
     if  (temps[i] > maxTemp) {maxTemp = temps[i];}
   }
-  chart.options = {legend: {display: false},scales: {yAxes: [{ticks: {min:minTemp, max:maxTemp}}],}};
+  chart.options = {legend: {display: false},scales: {yAxes: [{ticks: {min:-99, max:99}}],}};
   chart.update();
 }
 
 
-
-function getDayOfWeek(number) {
-  if (number === 0) {
-    return "Niedziela";
-  } else if (numer === 1) {
-    return "Poniedziałek";
-  } else if (numer === 2) {
-    return "Wtorek";
-  } else if (numer === 3) {
-    return "Środa";
-  } else if (numer === 4) {
-    return "Czwartek";
-  } else if (numer === 5) {
-    return "Piątek";
-  } else {
-    return "Sobota";
-  }
-}
 
 
 

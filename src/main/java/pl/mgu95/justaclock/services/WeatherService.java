@@ -1,5 +1,6 @@
 package pl.mgu95.justaclock.services;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import pl.mgu95.justaclock.weather.Weather;
 import pl.mgu95.justaclock.weather.WeatherAPI.WeatherAPI;
@@ -66,5 +67,9 @@ public class WeatherService {
 
     public String getDataSource() {
         return weather.getDataSource();
+    }
+
+    public JSONObject getForecast(int day) {
+        return weather.getForecast(day);
     }
 }

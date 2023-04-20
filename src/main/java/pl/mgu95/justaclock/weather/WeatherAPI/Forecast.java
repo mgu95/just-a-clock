@@ -16,7 +16,6 @@ public class Forecast {
     private int[] windSpeeds = new int[24];
     private String[] windDirections = new String[24];
 
-
     public Forecast(JSONObject json) {
         date = setDate(json.getString("date"));
         JSONObject astro = json.getJSONObject("astro");
@@ -63,20 +62,40 @@ public class Forecast {
         return sunset;
     }
 
+    public int[] getTemperatures() {
+        return temperatures;
+    }
+
     public int getTemperatureAt(int hour) {
         return temperatures[hour];
+    }
+
+    public String[] getIcons() {
+        return icons;
     }
 
     public String getIconAt(int hour) {
         return icons[hour];
     }
 
+    public String[] getConditions() {
+        return conditions;
+    }
+
     public String getConditionAt(int hour) {
         return conditions[hour];
     }
 
+    public int[] getWindSpeeds() {
+        return windSpeeds;
+    }
+
     public int getWindSpeedAt(int hour) {
         return windSpeeds[hour];
+    }
+
+    public String[] getWindDirections() {
+        return windDirections;
     }
 
     public String getWindDirectionAt(int hour) {

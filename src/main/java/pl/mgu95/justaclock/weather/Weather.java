@@ -1,5 +1,7 @@
 package pl.mgu95.justaclock.weather;
 
+import org.json.JSONObject;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -19,5 +21,5 @@ public interface Weather {
     public float getAirQualityPM10();
     public String getUpdateTime();
     public String getDataSource();
-
+    JSONObject getForecast(int day);
 }

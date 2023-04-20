@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a25215df-ac48-4a74-aac8-05aa2390c70e" name="Changes" comment="Now WeatherService manages weather">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI/Forecast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/styles/homeStyle.jsp" afterDir="false" />
+    <list default="true" id="a25215df-ac48-4a74-aac8-05aa2390c70e" name="Changes" comment="rebuild app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/JustAClockApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/JustAClockApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/controllers/WeatherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/services/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/services/WeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI/WeatherAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/pl/mgu95/justaclock/weather/WeatherAPITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI/Forecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI/Forecast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mgu95/justaclock/weather/WeatherAPI/WeatherAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/apps/weather.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/apps/weather.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -156,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675981580379</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="rebuild app">
+      <created>1679342370901</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679342370901</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +177,7 @@
     <MESSAGE value="more data from weather" />
     <MESSAGE value="WeatherAPI class is complete" />
     <MESSAGE value="Now WeatherService manages weather" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now WeatherService manages weather" />
+    <MESSAGE value="rebuild app" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild app" />
   </component>
 </project>

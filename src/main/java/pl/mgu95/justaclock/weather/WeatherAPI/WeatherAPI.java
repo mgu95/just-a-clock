@@ -25,6 +25,21 @@ public class WeatherAPI implements Weather {
     public WeatherAPI() {
     }
 
+    @Override
+    public JSONObject getForecast(int day) {
+        validator();
+        JSONObject object = new JSONObject();
+        object.put("date", forecasts[day].getDate().toString());
+        object.put("sunrise", forecasts[day].getSunrise());
+        object.put("sunset", forecasts[day].getSunset());
+        object.put("temperatures", forecasts[day].getTemperatures());
+        object.put("conditions", forecasts[day].getConditions());
+        object.put("windSpeeds", forecasts[day].getWindSpeeds());
+        object.put("windDirections", forecasts[day].getWindDirections());
+
+        return object;
+    }
+
     private void updateWeather() {
         JSONObject data = getData("http://192.168.0.31:8080/getWeatherData");
 //        "http://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" + city + "&days=3&aqi=yes&alerts=no"
